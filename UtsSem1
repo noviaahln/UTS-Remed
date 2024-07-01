@@ -1,0 +1,151 @@
+##FIZZBUZZ 9874
+input_user = int(input())
+for i in range(1, input_user+1) :
+  if i % 3 == 0 and i % 5 == 0 :
+    print("FizzBuzz")
+  elif i % 3 == 0 :
+    print("Fizz")
+  elif i % 5 == 0 :
+    print("Buzz")
+  else :
+    print(i)
+#RAKA YANG BINGUNG
+input_user = int(input())
+for i in range(1, input_user+1)
+  if i == 4 :
+    print("AB")
+  elif i == 2 :
+    print("CB")
+  elif i == 2 :
+    print("BD")
+  elif i == 5:
+    print("AC")
+  else :
+    print("i")
+#BASHORI YANG GABUT
+input_user = input()
+kiri = ["q","w","e","r","t","a","s","d","f","g","z","x","c","v","b"]
+kanan = ["y","u","i","o","p","h","j","k","l","n","m"]
+if input_user in kiri :
+  print("true")
+else :
+  print("false")
+  
+if input_user in kanan :
+   print("False")
+else :
+   print("true")
+
+##ALI SI PELUPA
+password = str(input("Masukkan password"))
+if password == "Ayam15!" :
+  print("tidak aman")
+else :
+  print("aman")
+##MESIN KASIR
+def hitung_harga(produk, jumlah):
+    harga = 0
+    
+    if produk == "teh":
+        harga = 3000
+    elif produk == "kopi":
+        harga = 2000
+    elif produk == "roti":
+        harga = 2500
+    elif produk == "tahu kres":
+        harga = 5000
+    elif produk == "pop ice" :
+        harga = 4000
+    else:
+        print("Data tidak valid")
+        return None
+
+    
+    if jumlah == 0:
+        print("Anda tidak membeli produk apapun")
+    elif jumlah > 0:
+        harga_total = jumlah * harga
+        print(f"Total harga : Rp{harga_total}")
+        return {"Produk": produk, "Jumlah": jumlah, "Total harga": harga_total}
+    else:
+        print("Data tidak valid")
+        return None
+
+
+while True:
+    produk = input("Masukkan jenis produk: (teh/kopi/roti/tahu kres/pop ice): ")
+    jumlah = int(input("Berapa banyak jumlah yang dibeli: "))
+
+    
+    transaksi = hitung_harga(produk, jumlah)
+    ulang = input("Ulangi transaksi? (Ya/Tidak): ")
+    if ulang != "Ya":
+        break
+print(transaksi)
+
+
+##Remed UTS##
+##IDOLA
+nilai_1 = float(input(""))
+nilai_2 = float(input(""))
+nilai_3 = float(input(""))
+total_nilai = nilai_1+nilai_2+nilai_3
+
+if total_nilai < 200 :
+  print("tidak lolos")
+elif nilai_1 < 50 :
+  print("tidak lolos")
+elif nilai_2 < 50 :
+  print("tidak lolos")
+elif nilai_3 < 50 :
+  print("tidak lolos")
+else :
+  print("lolos")
+
+##TINGGI BEBEK 
+bebek1 = int(input())
+bebek2 = int(input())
+bebek3 = int(input())
+
+tinggi_terendah = min(bebek1, bebek2, bebek3)
+tinggi_tertinggi = max(bebek1, bebek2, bebek3)
+tinggi_tengah = bebek1 + bebek2 + bebek3 - tinggi_terendah - tinggi_tertinggi
+
+print(tinggi_terendah)
+print(tinggi_tertinggi)
+print(tinggi_tengah)
+
+##BEBEK GANTENG
+N = int(input("Jumlah bebek: "))
+nilai_kegantengan = list(map(int, input("Masukkan nilai kegantengan bebek (pisahkan dengan spasi): ").split()))
+nilai_kegantengan.sort()
+grup1 = nilai_kegantengan[:N//3]
+grup2 = nilai_kegantengan[N//3:2*N//3]
+grup3 = nilai_kegantengan[2*N//3:]
+
+kecemburuan_grup1 = max(grup1) - min(grup1)
+kecemburuan_grup2 = max(grup2) - min(grup2)
+kecemburuan_grup3 = max(grup3) - min(grup3)
+
+total_kecemburuan = kecemburuan_grup1 + kecemburuan_grup2 + kecemburuan_grup3
+
+print("Jumlah minimal kecemburuan:", total_kecemburuan)
+
+##KALIMAT MATEMATIKA
+def hitung_hasil(kalimat_matematika):
+    op = {'+': lambda x, y: x + y,
+          '-': lambda x, y: x - y,
+          '*': lambda x, y: x * y,
+          '<': lambda x, y: x < y,
+          '>': lambda x, y: x > y}
+
+    for i in op:
+        if i in kalimat_matematika:
+            angka1, angka2 = map(int, kalimat_matematika.split(i))
+            return op[i](angka1, angka2)
+
+    return "Error: Format kalimat matematika tidak valid."
+
+kalimat_matematika = input()
+hasil = hitung_hasil(kalimat_matematika)
+print(hasil)
